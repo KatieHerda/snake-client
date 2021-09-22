@@ -3,8 +3,9 @@ let connection;
 
 const setupInput = (conn) => {
   connection = conn;
-
-  const stdin = process.stdin;
+  
+  //standard input
+  const stdin = process.stdin; 
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
@@ -30,8 +31,9 @@ const setupInput = (conn) => {
     };
             
   }
-    stdin.on("data", handleUserInput);
-    return stdin;
+  //standard input with event handler that is listening to data input (key input) and when it hears, it then calls handleUserInput function.
+  stdin.on("data", handleUserInput);
+  return stdin;
 };
 
 module.exports = {setupInput};
