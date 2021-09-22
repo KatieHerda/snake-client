@@ -10,17 +10,22 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  //logs message locally
   conn.on("connect", () => {
     console.log('Woo! I\'m connected.');
   });
-  
+
+  //sends message to server
   conn.on("connect", () => {
-    conn.write("Name: KRH")
+    conn.write("Name: KRH");
+    //setTimeout(() => {conn.write("Move: up")}, 500);
+    // setInterval(() => {conn.write("Move: up")}, 100);
+    //conn.write("Move: up");
   });
 
   conn.on("data", (data) => {
     console.log(data);
-  })
+  });
 
   return conn;
 };
