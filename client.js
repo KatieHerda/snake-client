@@ -19,10 +19,11 @@ const connect = function () {
   conn.on("connect", () => {
     conn.write("Name: KRH");
     //setTimeout(() => {conn.write("Move: up")}, 500);
-    // setInterval(() => {conn.write("Move: up")}, 100);
+    //setInterval(() => {conn.write("Move: up")}, 100);
     //conn.write("Move: up");
   });
-
+   
+  //retrieves data sent from server
   conn.on("data", (data) => {
     console.log(data);
   });
